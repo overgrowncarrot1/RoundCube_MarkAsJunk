@@ -37,7 +37,9 @@ URL = args.URL
 LHOST = args.LHOST
 LPORT = args.LPORT
 
-driver = webdriver.Firefox()
+options = webdriver.FirefoxOptions()
+service = Service('/usr/local/bin/geckodriver')  # Define the service with the correct path
+driver = webdriver.Firefox(service=service, options=options)  # Use the service parameter
 URL1 = f"{URL}"
 driver.get(URL1)
 
